@@ -12,13 +12,14 @@ export class AddofficeComponent {
     officeCode: [null, Validators.required],
     officeName: [null, Validators.required],
     country:     [null, Validators.required],
-    phoneNumber:[null, Validators.compose([
+    phonenumber:[null, Validators.compose([
       Validators.required, Validators.minLength(10), Validators.maxLength(10)])
     ],
     addressLine1: [null, Validators.required],
     addressLine2: null,
     street: null,
-    postalCode: [null, Validators.compose([
+    city: [null, Validators.required],
+    postalcode: [null, Validators.compose([
       Validators.required, Validators.minLength(5), Validators.maxLength(5)])
     ]
   });
