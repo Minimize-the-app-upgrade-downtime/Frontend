@@ -25,6 +25,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ViewOfficeComponent } from './view-office/view-office.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ViewOfficeComponent } from './view-office/view-office.component';
     AddemployeeComponent,
     ViewEmployeeComponent,
     ViewOfficeComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
