@@ -16,4 +16,7 @@ export class EmployeeService {
     return this.http.post(`${this.apiUri}/addFormEmployee`,emp);
   }
 
+  view(){
+    return this.http.get(`${this.apiUri}/viewemployee`);
+  }
 }

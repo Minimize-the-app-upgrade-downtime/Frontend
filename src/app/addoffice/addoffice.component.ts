@@ -44,7 +44,7 @@ export class AddofficeComponent {
     this.offiService.addoffice(this.office.value).subscribe(
       (msg)=>{ 
         console.log(msg)
-        this.router.navigateByUrl(`/add-employee`);
+        this.router.navigateByUrl(`/view-office`);
       },
       (err)=>{ console.log(err)}
     )

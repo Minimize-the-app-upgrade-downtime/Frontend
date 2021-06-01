@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { EmployeeService } from '../service/employee.service'
 
 @Component({
   selector: 'app-view-employee',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewEmployeeComponent implements OnInit {
 
-  constructor() { }
+  employee:any;
+  constructor(
+         private es : EmployeeService,
+        private route: ActivatedRoute,
+        private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.es.view().subscribe(
+      data=>{
+        console.log(data)
+        this.employee = data;
+        this.employee = this.employee.data
+      }, 
+      err => {console.log(err)}
+    )
   }
 
 }
