@@ -40,13 +40,13 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <mat-select placeholder="officeCode" formControlName="officeCode">
+            <mat-select placeholder="office" formControlName="officeCode">
               <mat-option *ngFor="let officeCode of officeCodes" [value]="officeCode.abbreviation">
                 {{ officeCode.name }}
               </mat-option>
             </mat-select>
             <mat-error *ngIf="employee.controls['officeCode'].hasError('required')">
-              officeCode is <strong>required</strong>
+              office is <strong>required</strong>
             </mat-error>
           </mat-form-field>
         </div>

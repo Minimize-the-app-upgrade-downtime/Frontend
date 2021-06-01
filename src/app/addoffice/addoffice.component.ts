@@ -1,6 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { OfficeService } from '../service/office.service'
 
 @Component({
   selector: 'app-addoffice',
@@ -28,7 +29,9 @@ export class AddofficeComponent {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private offiService: OfficeService,
+    private router: Router,
     ) {}
 
     ngOnInit() {
@@ -36,7 +39,15 @@ export class AddofficeComponent {
     }
 
   onSubmit(): void {
-    alert(this.office.value);
-    console.log(this.office.value);
+
+    //console.log(this.office.value);
+    this.offiService.addoffice(this.office.value).subscribe(
+      (msg)=>{ 
+        console.log(msg)
+        this.router.navigateByUrl(`/add-employee`);
+      },
+      (err)=>{ console.log(err)}
+    )
+    
   }
 }

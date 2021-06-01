@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { EmployeeService } from '../service/employee.service'
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-addemployee',
@@ -19,17 +21,29 @@ export class AddemployeeComponent {
   hasUnitNumber = false;
 
   officeCodes = [
-    {name: 'Alabama', abbreviation: 'AL'},
-    {name: 'Alaska', abbreviation: 'AK'},
-    {name: 'American Samoa', abbreviation: 'AS'},
-    {name: 'Arizona', abbreviation: 'AZ'},
-    {name: 'Arkansas', abbreviation: 'AR'},
-    
+    {name: 'Sarathchandra', abbreviation: 'bra001'},
+    {name: 'LOLC', abbreviation: 'col1'},
+    {name: 'Sahanma', abbreviation: 'emb011'},
+    {name: 'Janashakthi', abbreviation: 'new011'},
+    {name: 'Edirisinghe', abbreviation: 'new012'},
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private emp: EmployeeService,
+    private route: ActivatedRoute,
+    private router: Router,
+      
+    ) {}
 
   onSubmit(): void {
-    alert('Thanks!');
+    //console.log(this.employee.value)
+    this.emp.addEmployee(this.employee.value).subscribe(
+      (msg)=>{
+        console.log(msg)
+        this.router.navigateByUrl(`/add-office`);
+      },
+      (err)=>{ console.log(err)}
+    )
   }
 }
