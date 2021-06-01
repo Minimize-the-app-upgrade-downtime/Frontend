@@ -20,6 +20,11 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { ViewOfficeComponent } from './view-office/view-office.component';
 
 
 @NgModule({
@@ -28,6 +33,8 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
     NavbarComponent,
     AddofficeComponent,
     AddemployeeComponent,
+    ViewEmployeeComponent,
+    ViewOfficeComponent,
     
   ],
   imports: [
@@ -45,7 +52,10 @@ import { AddemployeeComponent } from './addemployee/addemployee.component';
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

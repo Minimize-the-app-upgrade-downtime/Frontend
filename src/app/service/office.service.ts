@@ -16,4 +16,7 @@ export class OfficeService {
     return this.http.post(`${this.apiUri}/addFormOffice`,office);
   }
 
+  view(){
+    return this.http.get(`${this.apiUri}/viewoffice`);
+  }
 }
